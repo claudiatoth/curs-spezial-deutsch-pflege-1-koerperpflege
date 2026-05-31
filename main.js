@@ -105,9 +105,13 @@ function toggleAudio(event, audioId) {
             btn.textContent = '⏸';
             currentAudioId = audioId;
         }).catch(err => {
-            console.log('Audio nu poate fi redat:', err);
-            alert('Fișierul audio nu este disponibil. Verifică dacă MP3-ul a fost încărcat în folder.');
+            // Silent fail — audio file not uploaded yet (no alert, only console log for dev)
+            console.log('Audio not available for: ' + audioId, err.message);
             btn.textContent = '▶';
+            // Visual hint: brief shake to show user the button was tapped
+            btn.style.transition = 'transform 0.15s';
+            btn.style.transform = 'scale(0.92)';
+            setTimeout(() => { btn.style.transform = ''; }, 150);
         });
     } else {
         // PAUZĂ — păstrăm poziția în localStorage (NU mai resetăm)
