@@ -193,17 +193,36 @@ function playDialog(dialogId) {
 function showReply(dialogId, reply) {
     const data = (dialogId === 'dialog1') ? dialog1Data : dialog2Data;
 
-    // Mark active speaker
-    document.querySelectorAll(`#dialog-${dialogId} .character-wrapper`).forEach(c => c.classList.remove('speaking'));
+    // Detectează dacă același speaker continuă (Andreea poate avea 2-4 replici consecutive)
     const activeChar = document.querySelector(`#dialog-${dialogId} .character-${reply.speaker}`);
+    const sameSpeakerContinues = activeChar && activeChar.classList.contains('speaking');
+
+    // Marchează speakerul activ (păstrează speaking dacă același continuă — fără reset pulse)
+    document.querySelectorAll(`#dialog-${dialogId} .character-wrapper`).forEach(c => {
+        if (c !== activeChar) c.classList.remove('speaking');
+    });
     if (activeChar) activeChar.classList.add('speaking');
 
-    // Hide all bubbles
-    document.querySelectorAll(`#dialog-${dialogId} .speech-bubble`).forEach(b => b.classList.remove('visible'));
+    // Ascunde bubble-uri ale ALTOR speakeri (NU al celui care continuă)
+    document.querySelectorAll(`#dialog-${dialogId} .speech-bubble`).forEach(b => {
+        if (!b.id.endsWith('-' + reply.speaker)) {
+            b.classList.remove('visible');
+        }
+    });
 
-    // Show active speaker's bubble
     const bubble = document.getElementById(`bubble-${dialogId}-${reply.speaker}`);
-    if (bubble) {
+    if (!bubble) return;
+
+    if (sameSpeakerContinues) {
+        // ANDREEA CONTINUĂ — fade text out → swap → fade text in (bubble rămâne)
+        bubble.classList.add('text-fading');
+        setTimeout(() => {
+            bubble.querySelector('.bubble-de').textContent = reply.de;
+            bubble.querySelector('.bubble-ro').textContent = reply.ro;
+            bubble.classList.remove('text-fading');
+        }, 180);
+    } else {
+        // SCHIMBARE speaker — text instant + bubble fade-in
         bubble.querySelector('.bubble-de').textContent = reply.de;
         bubble.querySelector('.bubble-ro').textContent = reply.ro;
         bubble.classList.add('visible');

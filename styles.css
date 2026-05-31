@@ -2199,6 +2199,14 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+.speech-bubble .bubble-de,
+.speech-bubble .bubble-ro {
+    transition: opacity 0.18s ease;
+}
+.speech-bubble.text-fading .bubble-de,
+.speech-bubble.text-fading .bubble-ro {
+    opacity: 0.15;
+}
 .bubble-de {
     color: #065f46;
     font-weight: 600;
