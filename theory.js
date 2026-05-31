@@ -50,7 +50,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <div class="audio-player">
         <button class="audio-btn" id="btn-audio-1" onclick="toggleAudio(event, 'audio-1')">▶</button>
-        <audio id="audio-1" preload="none"><source src="audio/01-fragen-start.wav" type="audio/wav"></audio>
+        <audio id="audio-1" preload="none"><source src="audio/01-fragen-start.mp3" type="audio/mpeg"></audio>
       </div>
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>
@@ -95,7 +95,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <div class="audio-player">
         <button class="audio-btn" id="btn-audio-2" onclick="toggleAudio(event, 'audio-2')">▶</button>
-        <audio id="audio-2" preload="none"><source src="audio/02-waschen-bett.wav" type="audio/wav"></audio>
+        <audio id="audio-2" preload="none"><source src="audio/02-waschen-bett.mp3" type="audio/mpeg"></audio>
       </div>
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>
@@ -147,7 +147,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <div class="audio-player">
         <button class="audio-btn" id="btn-audio-3" onclick="toggleAudio(event, 'audio-3')">▶</button>
-        <audio id="audio-3" preload="none"><source src="audio/03-duschen-schampoo.wav" type="audio/wav"></audio>
+        <audio id="audio-3" preload="none"><source src="audio/03-duschen-shampoo.mp3" type="audio/mpeg"></audio>
       </div>
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>
@@ -205,7 +205,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <div class="audio-player">
         <button class="audio-btn" id="btn-audio-4" onclick="toggleAudio(event, 'audio-4')">▶</button>
-        <audio id="audio-4" preload="none"><source src="audio/04-mundpflege-creme.wav" type="audio/wav"></audio>
+        <audio id="audio-4" preload="none"><source src="audio/04-mundpflege-creme.mp3" type="audio/mpeg"></audio>
       </div>
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>
@@ -256,7 +256,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <div class="audio-player">
         <button class="audio-btn" id="btn-audio-5" onclick="toggleAudio(event, 'audio-5')">▶</button>
-        <audio id="audio-5" preload="none"><source src="audio/05-koerperteile.wav" type="audio/wav"></audio>
+        <audio id="audio-5" preload="none"><source src="audio/05-koerperteile.mp3" type="audio/mpeg"></audio>
       </div>
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>
@@ -354,7 +354,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <div class="audio-player">
         <button class="audio-btn" id="btn-audio-6" onclick="toggleAudio(event, 'audio-6')">▶</button>
-        <audio id="audio-6" preload="none"><source src="audio/06-gramatica-recap.wav" type="audio/wav"></audio>
+        <audio id="audio-6" preload="none"><source src="audio/06-gramatica-recap.mp3" type="audio/mpeg"></audio>
       </div>
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>

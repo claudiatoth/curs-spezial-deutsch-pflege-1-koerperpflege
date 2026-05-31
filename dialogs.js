@@ -12,21 +12,21 @@ const dialog1Data = {
     id: 'dialog1',
     title: 'Guten Morgen, Frau Müller',
     context: 'Andreea intră în camera Doamnei Müller dimineața — începe rutina de igienă.',
-    audioFile: 'audio/dialog-01.wav',
-    totalDuration: 80,
+    audioFile: 'audio/dialog-01.mp3',
+    totalDuration: 79,
     replici: [
         { id: 1, speaker: 'andreea',     start: 0,  duration: 6, de: 'Guten Morgen, Frau Müller! Wie haben Sie geschlafen?', ro: 'Bună dimineața, Doamnă Müller! Cum ați dormit?' },
         { id: 2, speaker: 'fraumueller', start: 6,  duration: 5, de: 'Guten Morgen, Andreea. Gut, danke.', ro: 'Bună dimineața, Andreea. Bine, mulțumesc.' },
-        { id: 3, speaker: 'andreea',     start: 11, duration: 7, de: 'Brauchen Sie meine Hilfe bei der Körperpflege?', ro: 'Aveți nevoie de ajutorul meu la igiena corporală?' },
-        { id: 4, speaker: 'fraumueller', start: 18, duration: 4, de: 'Ja, bitte.', ro: 'Da, vă rog.' },
-        { id: 5, speaker: 'andreea',     start: 22, duration: 7, de: 'Ich bringe gleich die Waschschüssel ins Zimmer.', ro: 'Aduc imediat ligheanul în cameră.' },
-        { id: 6, speaker: 'andreea',     start: 29, duration: 9, de: 'Können Sie sich selbst waschen oder brauchen Sie meine Hilfe?', ro: 'Vă puteți spăla singură sau aveți nevoie de ajutorul meu?' },
-        { id: 7, speaker: 'fraumueller', start: 38, duration: 5, de: 'Den Oberkörper kann ich selbst.', ro: 'Partea de sus pot singură.' },
-        { id: 8, speaker: 'andreea',     start: 43, duration: 8, de: 'Sehr gut. Den Unterkörper wasche ich im Bett.', ro: 'Foarte bine. Partea de jos o spăl eu în pat.' },
-        { id: 9, speaker: 'andreea',     start: 51, duration: 10, de: 'Drehen Sie sich bitte auf die Seite, damit ich Ihnen den Rücken waschen kann.', ro: 'Întoarceți-vă vă rog pe o parte, ca să vă pot spăla spatele.' },
-        { id: 10, speaker: 'fraumueller', start: 61, duration: 5, de: 'Ist das Wasser warm genug?', ro: 'Apa este destul de caldă?' },
-        { id: 11, speaker: 'andreea',     start: 66, duration: 5, de: 'Ja, ich habe es schon geprüft.', ro: 'Da, am verificat deja.' },
-        { id: 12, speaker: 'andreea',     start: 71, duration: 9, de: 'Wir können mit der Körperpflege anfangen.', ro: 'Putem începe igiena.' }
+        { id: 3, speaker: 'andreea',     start: 11, duration: 6, de: 'Brauchen Sie meine Hilfe bei der Körperpflege?', ro: 'Aveți nevoie de ajutorul meu la igiena corporală?' },
+        { id: 4, speaker: 'fraumueller', start: 17, duration: 4, de: 'Ja, bitte.', ro: 'Da, vă rog.' },
+        { id: 5, speaker: 'andreea',     start: 21, duration: 7, de: 'Ich bringe gleich die Waschschüssel ins Zimmer.', ro: 'Aduc imediat ligheanul în cameră.' },
+        { id: 6, speaker: 'andreea',     start: 28, duration: 9, de: 'Können Sie sich selbst waschen oder brauchen Sie meine Hilfe?', ro: 'Vă puteți spăla singură sau aveți nevoie de ajutorul meu?' },
+        { id: 7, speaker: 'fraumueller', start: 37, duration: 5, de: 'Den Oberkörper kann ich selbst.', ro: 'Partea de sus pot singură.' },
+        { id: 8, speaker: 'andreea',     start: 42, duration: 8, de: 'Sehr gut. Den Unterkörper wasche ich im Bett.', ro: 'Foarte bine. Partea de jos o spăl eu în pat.' },
+        { id: 9, speaker: 'andreea',     start: 50, duration: 10, de: 'Drehen Sie sich bitte auf die Seite, damit ich Ihnen den Rücken waschen kann.', ro: 'Întoarceți-vă vă rog pe o parte, ca să vă pot spăla spatele.' },
+        { id: 10, speaker: 'fraumueller', start: 60, duration: 5, de: 'Ist das Wasser warm genug?', ro: 'Apa este destul de caldă?' },
+        { id: 11, speaker: 'andreea',     start: 65, duration: 5, de: 'Ja, ich habe es schon geprüft.', ro: 'Da, am verificat deja.' },
+        { id: 12, speaker: 'andreea',     start: 70, duration: 9, de: 'Wir können mit der Körperpflege anfangen.', ro: 'Putem începe igiena.' }
     ]
 };
 
@@ -38,19 +38,19 @@ const dialog2Data = {
     id: 'dialog2',
     title: 'Beim Duschen',
     context: 'În baie — Andreea o ajută pe Frau Müller la duș, șampon, cremă.',
-    audioFile: 'audio/dialog-02.wav',
-    totalDuration: 65,
+    audioFile: 'audio/dialog-02.mp3',
+    totalDuration: 57,
     replici: [
-        { id: 1, speaker: 'andreea',     start: 0,  duration: 6, de: 'Frau Müller, heute ist Duschtag.', ro: 'Doamna Müller, astăzi e ziua de duș.' },
-        { id: 2, speaker: 'fraumueller', start: 6,  duration: 6, de: 'Schön. Ich brauche aber Hilfe.', ro: 'Frumos. Dar am nevoie de ajutor.' },
-        { id: 3, speaker: 'andreea',     start: 12, duration: 7, de: 'Natürlich. Ich helfe Ihnen beim Duschen.', ro: 'Bineînțeles. Vă ajut la duș.' },
-        { id: 4, speaker: 'andreea',     start: 19, duration: 5, de: 'Ist das Wasser warm genug?', ro: 'Apa este destul de caldă?' },
-        { id: 5, speaker: 'fraumueller', start: 24, duration: 4, de: 'Ja, perfekt.', ro: 'Da, perfect.' },
-        { id: 6, speaker: 'andreea',     start: 28, duration: 6, de: 'Ich werde Sie jetzt abduschen.', ro: 'Acum vă clătesc.' },
-        { id: 7, speaker: 'andreea',     start: 34, duration: 6, de: 'Jetzt spüle ich das Shampoo aus.', ro: 'Acum clătesc șamponul.' },
-        { id: 8, speaker: 'andreea',     start: 40, duration: 6, de: 'Ich trockne Ihren Rücken ab.', ro: 'Vă șterg spatele.' },
-        { id: 9, speaker: 'andreea',     start: 46, duration: 8, de: 'Soll ich Ihnen die Beine eincremen?', ro: 'Să vă dau cu cremă pe picioare?' },
-        { id: 10, speaker: 'fraumueller', start: 54, duration: 11, de: 'Ja, das wäre lieb. Danke.', ro: 'Da, ar fi drăguț. Mulțumesc.' }
+        { id: 1, speaker: 'andreea',     start: 0,  duration: 5, de: 'Frau Müller, heute ist Duschtag.', ro: 'Doamna Müller, astăzi e ziua de duș.' },
+        { id: 2, speaker: 'fraumueller', start: 5,  duration: 6, de: 'Schön. Ich brauche aber Hilfe.', ro: 'Frumos. Dar am nevoie de ajutor.' },
+        { id: 3, speaker: 'andreea',     start: 11, duration: 6, de: 'Natürlich. Ich helfe Ihnen beim Duschen.', ro: 'Bineînțeles. Vă ajut la duș.' },
+        { id: 4, speaker: 'andreea',     start: 17, duration: 4, de: 'Ist das Wasser warm genug?', ro: 'Apa este destul de caldă?' },
+        { id: 5, speaker: 'fraumueller', start: 21, duration: 4, de: 'Ja, perfekt.', ro: 'Da, perfect.' },
+        { id: 6, speaker: 'andreea',     start: 25, duration: 5, de: 'Ich werde Sie jetzt abduschen.', ro: 'Acum vă clătesc.' },
+        { id: 7, speaker: 'andreea',     start: 30, duration: 5, de: 'Jetzt spüle ich das Shampoo aus.', ro: 'Acum clătesc șamponul.' },
+        { id: 8, speaker: 'andreea',     start: 35, duration: 6, de: 'Ich trockne Ihren Rücken ab.', ro: 'Vă șterg spatele.' },
+        { id: 9, speaker: 'andreea',     start: 41, duration: 7, de: 'Soll ich Ihnen die Beine eincremen?', ro: 'Să vă dau cu cremă pe picioare?' },
+        { id: 10, speaker: 'fraumueller', start: 48, duration: 9, de: 'Ja, das wäre lieb. Danke.', ro: 'Da, ar fi drăguț. Mulțumesc.' }
     ]
 };
 
@@ -114,7 +114,7 @@ function buildAnimatedDialog(data) {
                 </div>
 
                 <audio id="audio-${data.id}" preload="none">
-                    <source src="${data.audioFile}" type="audio/wav">
+                    <source src="${data.audioFile}" type="audio/mpeg">
                 </audio>
             </div>
 
