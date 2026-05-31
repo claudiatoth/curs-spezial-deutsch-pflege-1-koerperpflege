@@ -12,7 +12,7 @@ const dialog1Data = {
     id: 'dialog1',
     title: 'Guten Morgen, Frau Müller',
     context: 'Andreea intră în camera Doamnei Müller dimineața — începe rutina de igienă.',
-    audioFile: 'audio/dialog-01.mp3',
+    audioFile: 'audio/dialog-01.wav',
     totalDuration: 80,
     replici: [
         { id: 1, speaker: 'andreea',     start: 0,  duration: 6, de: 'Guten Morgen, Frau Müller! Wie haben Sie geschlafen?', ro: 'Bună dimineața, Doamnă Müller! Cum ați dormit?' },
@@ -38,7 +38,7 @@ const dialog2Data = {
     id: 'dialog2',
     title: 'Beim Duschen',
     context: 'În baie — Andreea o ajută pe Frau Müller la duș, șampon, cremă.',
-    audioFile: 'audio/dialog-02.mp3',
+    audioFile: 'audio/dialog-02.wav',
     totalDuration: 65,
     replici: [
         { id: 1, speaker: 'andreea',     start: 0,  duration: 6, de: 'Frau Müller, heute machen wir Duschen.', ro: 'Doamna Müller, astăzi facem duș.' },
@@ -114,7 +114,7 @@ function buildAnimatedDialog(data) {
                 </div>
 
                 <audio id="audio-${data.id}" preload="none">
-                    <source src="${data.audioFile}" type="audio/mpeg">
+                    <source src="${data.audioFile}" type="audio/wav">
                 </audio>
             </div>
 

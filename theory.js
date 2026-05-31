@@ -50,7 +50,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-1" onclick="toggleAudio(event, 'audio-1')">▶</button>
       <span class="audio-label">🎙️ Ascultă întrebările de start (audio Hedda)</span>
-      <audio id="audio-1" preload="none"><source src="audio/01-fragen-start.mp3" type="audio/mpeg"></audio>
+      <audio id="audio-1" preload="none"><source src="audio/01-fragen-start.wav" type="audio/wav"></audio>
     </div>
 
     <p class="theory-intro-para">Înainte să atingi pacientul, întrebi politicos. Acesta e <strong>RESPECTUL</strong> de bază în Pflege. Cele 5 fraze de aici le vei spune zilnic.</p>
@@ -93,7 +93,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-2" onclick="toggleAudio(event, 'audio-2')">▶</button>
       <span class="audio-label">🎙️ Ascultă propozițiile despre spălat (audio Hedda)</span>
-      <audio id="audio-2" preload="none"><source src="audio/02-waschen-bett.mp3" type="audio/mpeg"></audio>
+      <audio id="audio-2" preload="none"><source src="audio/02-waschen-bett.wav" type="audio/wav"></audio>
     </div>
 
     <p class="theory-intro-para">Pacientul imobilizat la pat se spală în 2 etape: <strong>Oberkörper</strong> (partea de sus) + <strong>Unterkörper</strong> (partea de jos). Iar tu îi explici fiecare mișcare.</p>
@@ -143,7 +143,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-3" onclick="toggleAudio(event, 'audio-3')">▶</button>
       <span class="audio-label">🎙️ Ascultă propozițiile despre duș + șampon (audio Hedda)</span>
-      <audio id="audio-3" preload="none"><source src="audio/03-duschen-schampoo.mp3" type="audio/mpeg"></audio>
+      <audio id="audio-3" preload="none"><source src="audio/03-duschen-schampoo.wav" type="audio/wav"></audio>
     </div>
 
     <p class="theory-intro-para">Aici intră în joc <strong>verbele trennbare</strong> care fac igiena: <em>abduschen</em>, <em>ausspülen</em>, <em>abtrocknen</em>. Prefixul lor zboară mereu la final.</p>
@@ -199,7 +199,7 @@ const theoryHTML = `
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-4" onclick="toggleAudio(event, 'audio-4')">▶</button>
       <span class="audio-label">🎙️ Ascultă propozițiile despre Mundpflege + cremă (audio Hedda)</span>
-      <audio id="audio-4" preload="none"><source src="audio/04-mundpflege-creme.mp3" type="audio/mpeg"></audio>
+      <audio id="audio-4" preload="none"><source src="audio/04-mundpflege-creme.wav" type="audio/wav"></audio>
     </div>
 
     <p class="theory-intro-para">Detaliile fac diferența: gură curată, piele hrănită, bărbie netedă. Aceste propoziții închid rutina de dimineață.</p>

@@ -104,23 +104,23 @@ function checkEx2() {
 // EX 3: Audio dictat — Hedda spune, scrii
 // ============================================
 const ex3Data = [
-    { id: 'a', audio: 'audio/dictat-01.mp3', correct: 'Ich helfe Ihnen.', accept: ['ich helfe ihnen', 'ich helfe ihnen.'] },
-    { id: 'b', audio: 'audio/dictat-02.mp3', correct: 'Brauchen Sie meine Hilfe?', accept: ['brauchen sie meine hilfe', 'brauchen sie meine hilfe?'] },
-    { id: 'c', audio: 'audio/dictat-03.mp3', correct: 'Ich wasche Ihnen den Rücken.', accept: ['ich wasche ihnen den ruecken', 'ich wasche ihnen den rücken'] },
-    { id: 'd', audio: 'audio/dictat-04.mp3', correct: 'Ist das Wasser warm genug?', accept: ['ist das wasser warm genug', 'ist das wasser warm genug?'] },
-    { id: 'e', audio: 'audio/dictat-05.mp3', correct: 'Ich spüle das Shampoo aus.', accept: ['ich spuele das shampoo aus', 'ich spüle das shampoo aus'] },
-    { id: 'f', audio: 'audio/dictat-06.mp3', correct: 'Drehen Sie sich auf die Seite.', accept: ['drehen sie sich auf die seite', 'drehen sie sich auf die seite.'] },
-    { id: 'g', audio: 'audio/dictat-07.mp3', correct: 'Ich trockne Ihnen die Haare.', accept: ['ich trockne ihnen die haare', 'ich trockne ihnen die haare.'] },
-    { id: 'h', audio: 'audio/dictat-08.mp3', correct: 'Soll ich Ihnen die Beine eincremen?', accept: ['soll ich ihnen die beine eincremen', 'soll ich ihnen die beine eincremen?'] },
-    { id: 'i', audio: 'audio/dictat-09.mp3', correct: 'Können Sie sich selbst waschen?', accept: ['koennen sie sich selbst waschen', 'können sie sich selbst waschen'] },
-    { id: 'j', audio: 'audio/dictat-10.mp3', correct: 'Ich kämme Ihre Haare.', accept: ['ich kaemme ihre haare', 'ich kämme ihre haare'] }
+    { id: 'a', audio: 'audio/dictat-01.wav', correct: 'Ich helfe Ihnen.', accept: ['ich helfe ihnen', 'ich helfe ihnen.'] },
+    { id: 'b', audio: 'audio/dictat-02.wav', correct: 'Brauchen Sie meine Hilfe?', accept: ['brauchen sie meine hilfe', 'brauchen sie meine hilfe?'] },
+    { id: 'c', audio: 'audio/dictat-03.wav', correct: 'Ich wasche Ihnen den Rücken.', accept: ['ich wasche ihnen den ruecken', 'ich wasche ihnen den rücken'] },
+    { id: 'd', audio: 'audio/dictat-04.wav', correct: 'Ist das Wasser warm genug?', accept: ['ist das wasser warm genug', 'ist das wasser warm genug?'] },
+    { id: 'e', audio: 'audio/dictat-05.wav', correct: 'Ich spüle das Shampoo aus.', accept: ['ich spuele das shampoo aus', 'ich spüle das shampoo aus'] },
+    { id: 'f', audio: 'audio/dictat-06.wav', correct: 'Drehen Sie sich auf die Seite.', accept: ['drehen sie sich auf die seite', 'drehen sie sich auf die seite.'] },
+    { id: 'g', audio: 'audio/dictat-07.wav', correct: 'Ich trockne Ihnen die Haare.', accept: ['ich trockne ihnen die haare', 'ich trockne ihnen die haare.'] },
+    { id: 'h', audio: 'audio/dictat-08.wav', correct: 'Soll ich Ihnen die Beine eincremen?', accept: ['soll ich ihnen die beine eincremen', 'soll ich ihnen die beine eincremen?'] },
+    { id: 'i', audio: 'audio/dictat-09.wav', correct: 'Können Sie sich selbst waschen?', accept: ['koennen sie sich selbst waschen', 'können sie sich selbst waschen'] },
+    { id: 'j', audio: 'audio/dictat-10.wav', correct: 'Ich kämme Ihre Haare.', accept: ['ich kaemme ihre haare', 'ich kämme ihre haare'] }
 ];
 
 function buildEx3() {
     const c = document.getElementById('ex3-container'); if (!c) return;
     let h = '<div class="exercise-instruction"><strong>🎙️ Audio dictat.</strong> Ascultă fraza Heddei și scrie-o exact așa cum o auzi. Punctuația finală e opțională.</div>';
     ex3Data.forEach((it, i) => {
-        h += `<div class="exercise-item"><span class="exercise-number">${i + 1}</span><div class="input-group"><div class="audio-dictat-row"><button class="audio-btn-mini" id="btn-${it.audio}" onclick="toggleAudio(event, 'audio-dictat-${it.id}')">▶</button><audio id="audio-dictat-${it.id}" preload="none"><source src="${it.audio}" type="audio/mpeg"></audio><span style="color:#6b7280; font-size:0.9rem;">Ascultă și scrie ce auzi:</span></div><input type="text" id="ex3-${it.id}" placeholder="Scrie ce auzi..."></div><div class="feedback" id="ex3-f${it.id}"></div></div>`;
+        h += `<div class="exercise-item"><span class="exercise-number">${i + 1}</span><div class="input-group"><div class="audio-dictat-row"><button class="audio-btn-mini" id="btn-${it.audio}" onclick="toggleAudio(event, 'audio-dictat-${it.id}')">▶</button><audio id="audio-dictat-${it.id}" preload="none"><source src="${it.audio}" type="audio/wav"></audio><span style="color:#6b7280; font-size:0.9rem;">Ascultă și scrie ce auzi:</span></div><input type="text" id="ex3-${it.id}" placeholder="Scrie ce auzi..."></div><div class="feedback" id="ex3-f${it.id}"></div></div>`;
     });
     c.innerHTML = h;
 }

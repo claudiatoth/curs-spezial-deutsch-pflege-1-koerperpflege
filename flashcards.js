@@ -79,15 +79,17 @@ function buildFlashcards() {
     container.innerHTML = `
         <div class="flashcard-intro">
             <p>🎯 <strong>48 flashcards în 6 categorii</strong> — Verbe · Părți corp · Obiecte · Imperativ · Întrebări · Pattern-uri.</p>
-            <p>Apasă pe card pentru a vedea traducerea. Folosește butoanele pentru navigare.</p>
+            <p>Apasă pe card pentru traducere · Apasă 🔊 pentru pronunție Hedda · Folosește săgețile pentru navigare.</p>
         </div>
         <div class="flashcard-wrapper">
             <div class="flashcard" id="flashcard" onclick="flipFlashcard()">
+                <button class="flashcard-audio-btn" id="flashcard-audio-btn" onclick="event.stopPropagation(); playFlashcardAudio()" aria-label="Asculta pronunția">🔊</button>
                 <div class="flashcard-content">
                     <div class="de" id="flashcard-de"></div>
                     <div class="ro" id="flashcard-ro"></div>
                 </div>
-                <div class="flashcard-hint">👆 Apasă pentru traducere</div>
+                <div class="flashcard-hint">👆 Apasă cardul pentru traducere · 🔊 pentru pronunție</div>
+                <audio id="flashcard-audio" preload="none"></audio>
             </div>
             <div class="flashcard-controls">
                 <button class="flashcard-btn" onclick="prevFlashcard()">← Înapoi</button>
@@ -109,9 +111,15 @@ function showFlashcard(index) {
     const ro = document.getElementById('flashcard-ro');
     const counter = document.getElementById('flashcard-counter');
     const progress = document.getElementById('flashcard-progress-fill');
+    const audio = document.getElementById('flashcard-audio');
 
     if (de) de.textContent = card.de;
     if (ro) ro.textContent = card.ro;
+    if (audio && card.audio) {
+        audio.pause();
+        audio.src = card.audio;
+        audio.load();
+    }
 
     if (counter) counter.textContent = `${index + 1} / ${flashcardsData.length}`;
     if (progress) progress.style.width = ((index + 1) / flashcardsData.length * 100) + '%';
@@ -119,6 +127,13 @@ function showFlashcard(index) {
     isFlipped = false;
     const fc = document.getElementById('flashcard');
     if (fc) fc.classList.remove('flipped');
+}
+
+function playFlashcardAudio() {
+    const audio = document.getElementById('flashcard-audio');
+    if (!audio || !audio.src) return;
+    audio.currentTime = 0;
+    audio.play().catch(() => { /* missing file - silent fail */ });
 }
 
 function flipFlashcard() {
