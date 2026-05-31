@@ -123,7 +123,7 @@ Cele 10 replici:
 
 | Sec | Speaker | Text |
 |---:|---|---|
-| 0 | Andreea | Frau Müller, heute machen wir Duschen. |
+| 0 | Andreea | Frau Müller, heute ist Duschtag. |
 | 6 | Frau Müller | Schön. Ich brauche aber Hilfe. |
 | 12 | Andreea | Natürlich. Ich helfe Ihnen beim Duschen. |
 | 19 | Andreea | Ist das Wasser warm genug? |

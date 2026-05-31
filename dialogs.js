@@ -41,7 +41,7 @@ const dialog2Data = {
     audioFile: 'audio/dialog-02.wav',
     totalDuration: 65,
     replici: [
-        { id: 1, speaker: 'andreea',     start: 0,  duration: 6, de: 'Frau Müller, heute machen wir Duschen.', ro: 'Doamna Müller, astăzi facem duș.' },
+        { id: 1, speaker: 'andreea',     start: 0,  duration: 6, de: 'Frau Müller, heute ist Duschtag.', ro: 'Doamna Müller, astăzi e ziua de duș.' },
         { id: 2, speaker: 'fraumueller', start: 6,  duration: 6, de: 'Schön. Ich brauche aber Hilfe.', ro: 'Frumos. Dar am nevoie de ajutor.' },
         { id: 3, speaker: 'andreea',     start: 12, duration: 7, de: 'Natürlich. Ich helfe Ihnen beim Duschen.', ro: 'Bineînțeles. Vă ajut la duș.' },
         { id: 4, speaker: 'andreea',     start: 19, duration: 5, de: 'Ist das Wasser warm genug?', ro: 'Apa este destul de caldă?' },

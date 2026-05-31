@@ -44,7 +44,7 @@ $dictat = @(
 # ====================
 $dialoguri = @(
     @{ file='dialog-01.wav'; text='Guten Morgen, Frau Muller! Wie haben Sie geschlafen? ... Guten Morgen, Andreea. Gut, danke. ... Brauchen Sie meine Hilfe bei der Korperpflege? ... Ja, bitte. ... Ich bringe gleich die Waschschussel ins Zimmer. ... Konnen Sie sich selbst waschen oder brauchen Sie meine Hilfe? ... Den Oberkorper kann ich selbst. ... Sehr gut. Den Unterkorper wasche ich im Bett. ... Drehen Sie sich bitte auf die Seite, damit ich Ihnen den Rucken waschen kann. ... Ist das Wasser warm genug? ... Ja, ich habe es schon gepruft. ... Wir konnen mit der Korperpflege anfangen.' },
-    @{ file='dialog-02.wav'; text='Frau Muller, heute machen wir Duschen. ... Schon. Ich brauche aber Hilfe. ... Naturlich. Ich helfe Ihnen beim Duschen. ... Ist das Wasser warm genug? ... Ja, perfekt. ... Ich werde Sie jetzt abduschen. ... Jetzt spule ich das Shampoo aus. ... Ich trockne Ihren Rucken ab. ... Soll ich Ihnen die Beine eincremen? ... Ja, das ware lieb. Danke.' }
+    @{ file='dialog-02.wav'; text='Frau Muller, heute ist Duschtag. ... Schon. Ich brauche aber Hilfe. ... Naturlich. Ich helfe Ihnen beim Duschen. ... Ist das Wasser warm genug? ... Ja, perfekt. ... Ich werde Sie jetzt abduschen. ... Jetzt spule ich das Shampoo aus. ... Ich trockne Ihren Rucken ab. ... Soll ich Ihnen die Beine eincremen? ... Ja, das ware lieb. Danke.' }
 )
 
 # ====================
