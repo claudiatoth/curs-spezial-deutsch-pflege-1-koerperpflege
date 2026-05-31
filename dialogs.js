@@ -138,7 +138,10 @@ function initDialogState(dialogId) {
         dialogState[dialogId] = {
             isPlaying: false,
             currentReply: 0,
+            lastDisplayedIdx: -1,
             timeouts: [],
+            timeUpdateHandler: null,
+            endedHandler: null,
             data: dialogId === 'dialog1' ? dialog1Data : dialog2Data
         };
     }
@@ -146,9 +149,9 @@ function initDialogState(dialogId) {
 }
 
 // ============================================
-// PLAY DIALOG (with timer-based animation)
-// Works WITH or WITHOUT MP3 — timer drives the animation
-// If MP3 exists, audio plays in parallel for sound
+// PLAY DIALOG — sincronizare pe audio.currentTime (PERFECTĂ)
+// Replicile apar fix când vocea ajunge la timpul lor, indiferent de
+// delay-uri/buffering/pause-resume. Timer-based fallback dacă MP3 lipsește.
 // ============================================
 function playDialog(dialogId) {
     const state = initDialogState(dialogId);
@@ -156,36 +159,74 @@ function playDialog(dialogId) {
 
     state.isPlaying = true;
     const data = state.data;
+    const audio = document.getElementById(`audio-${dialogId}`);
 
     document.getElementById(`btn-play-${dialogId}`).disabled = true;
     document.getElementById(`btn-pause-${dialogId}`).disabled = false;
 
-    // Try to play audio (silently fail if MP3 missing)
-    const audio = document.getElementById(`audio-${dialogId}`);
-    if (audio) {
-        audio.currentTime = state.currentReply > 0 ? data.replici[state.currentReply - 1].start : 0;
-        audio.play().catch(() => { /* MP3 missing — animation still works */ });
+    // Atașez listener timeupdate UNA SINGURĂ DATĂ per dialog
+    if (audio && !state.timeUpdateHandler) {
+        state.timeUpdateHandler = () => {
+            if (!state.isPlaying) return;
+            const t = audio.currentTime;
+            // Găsesc replica curentă bazat pe currentTime real
+            let currentIdx = -1;
+            for (let i = 0; i < data.replici.length; i++) {
+                if (t >= data.replici[i].start) currentIdx = i;
+                else break;
+            }
+            if (currentIdx >= 0 && currentIdx !== state.lastDisplayedIdx) {
+                state.lastDisplayedIdx = currentIdx;
+                state.currentReply = currentIdx + 1;
+                showReply(dialogId, data.replici[currentIdx]);
+                updateProgress(dialogId);
+            }
+        };
+        audio.addEventListener('timeupdate', state.timeUpdateHandler);
+
+        state.endedHandler = () => endDialog(dialogId);
+        audio.addEventListener('ended', state.endedHandler);
     }
 
-    // Schedule each reply with setTimeout
+    if (audio) {
+        // Resume from last position if we have one, else from 0
+        if (state.currentReply > 0 && state.currentReply < data.replici.length) {
+            // Stay where we are, don't reset
+        } else if (state.currentReply >= data.replici.length) {
+            audio.currentTime = 0;
+            state.currentReply = 0;
+            state.lastDisplayedIdx = -1;
+        }
+        audio.play().catch(() => {
+            // MP3 lipsă — fallback la timer-based (animație fără audio)
+            startTimerFallback(dialogId);
+        });
+    } else {
+        // Nu există audio element — timer fallback direct
+        startTimerFallback(dialogId);
+    }
+}
+
+// Fallback: animație pe timer dacă audio nu există / nu poate fi redat
+function startTimerFallback(dialogId) {
+    const state = initDialogState(dialogId);
+    const data = state.data;
     const startFromReply = state.currentReply;
     const offsetMs = startFromReply > 0 ? data.replici[startFromReply - 1].start * 1000 : 0;
 
     for (let i = startFromReply; i < data.replici.length; i++) {
         const reply = data.replici[i];
         const delayMs = (reply.start * 1000) - offsetMs;
-
         const timeout = setTimeout(() => {
+            if (!state.isPlaying) return;
+            state.lastDisplayedIdx = i;
             showReply(dialogId, reply);
             state.currentReply = i + 1;
             updateProgress(dialogId);
-
-            // If last reply, schedule end
             if (i === data.replici.length - 1) {
                 setTimeout(() => endDialog(dialogId), reply.duration * 1000);
             }
         }, delayMs);
-
         state.timeouts.push(timeout);
     }
 }
@@ -243,6 +284,7 @@ function pauseDialog(dialogId) {
 
     const audio = document.getElementById(`audio-${dialogId}`);
     if (audio) audio.pause();
+    // NU detașez timeUpdateHandler — astfel la reluare se sincronizează automat
 
     document.getElementById(`btn-play-${dialogId}`).disabled = false;
     document.getElementById(`btn-pause-${dialogId}`).disabled = true;
@@ -252,6 +294,7 @@ function resetDialog(dialogId) {
     pauseDialog(dialogId);
     const state = initDialogState(dialogId);
     state.currentReply = 0;
+    state.lastDisplayedIdx = -1;
     state.timeouts = [];
 
     document.querySelectorAll(`#dialog-${dialogId} .character-wrapper`).forEach(c => c.classList.remove('speaking'));
@@ -271,7 +314,7 @@ function endDialog(dialogId) {
     const state = dialogState[dialogId];
     if (!state) return;
     state.isPlaying = false;
-    state.currentReply = 0;
+    state.currentReply = state.data.replici.length;
     state.timeouts = [];
     document.getElementById(`btn-play-${dialogId}`).disabled = false;
     document.getElementById(`btn-pause-${dialogId}`).disabled = true;
@@ -289,17 +332,31 @@ function updateProgress(dialogId) {
 }
 
 // ============================================
-// REPLAY single reply
+// REPLAY single reply — sare audio.currentTime la timpul replicii
 // ============================================
 function replayReply(dialogId, replyId) {
     const data = (dialogId === 'dialog1') ? dialog1Data : dialog2Data;
-    const reply = data.replici.find(r => r.id === replyId);
-    if (!reply) return;
-    showReply(dialogId, reply);
+    const replyIdx = data.replici.findIndex(r => r.id === replyId);
+    if (replyIdx < 0) return;
+    const reply = data.replici[replyIdx];
 
     const state = initDialogState(dialogId);
-    state.currentReply = replyId;
+    state.lastDisplayedIdx = -1; // forțează re-display chiar dacă era deja afișată
+    showReply(dialogId, reply);
+    state.currentReply = replyIdx + 1;
     updateProgress(dialogId);
+
+    const audio = document.getElementById(`audio-${dialogId}`);
+    if (audio) {
+        audio.currentTime = reply.start;
+        // Pornesc audio dacă nu rulează deja
+        if (audio.paused) {
+            state.isPlaying = true;
+            audio.play().catch(() => { /* silent fail */ });
+            document.getElementById(`btn-play-${dialogId}`).disabled = true;
+            document.getElementById(`btn-pause-${dialogId}`).disabled = false;
+        }
+    }
 }
 
 // ============================================
