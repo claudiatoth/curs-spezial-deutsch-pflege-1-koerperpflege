@@ -49,7 +49,7 @@ const theoryHTML = `
 
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-1" onclick="toggleAudio(event, 'audio-1')">▶</button>
-      <span class="audio-label">🎙️ Ascultă întrebările de start (audio Hedda)</span>
+      <span class="lesson-audio-label">🎙️ Ascultă întrebările de start (audio Hedda)</span>
       <audio id="audio-1" preload="none"><source src="audio/01-fragen-start.wav" type="audio/wav"></audio>
     </div>
 
@@ -92,7 +92,7 @@ const theoryHTML = `
 
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-2" onclick="toggleAudio(event, 'audio-2')">▶</button>
-      <span class="audio-label">🎙️ Ascultă propozițiile despre spălat (audio Hedda)</span>
+      <span class="lesson-audio-label">🎙️ Ascultă propozițiile despre spălat (audio Hedda)</span>
       <audio id="audio-2" preload="none"><source src="audio/02-waschen-bett.wav" type="audio/wav"></audio>
     </div>
 
@@ -142,7 +142,7 @@ const theoryHTML = `
 
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-3" onclick="toggleAudio(event, 'audio-3')">▶</button>
-      <span class="audio-label">🎙️ Ascultă propozițiile despre duș + șampon (audio Hedda)</span>
+      <span class="lesson-audio-label">🎙️ Ascultă propozițiile despre duș + șampon (audio Hedda)</span>
       <audio id="audio-3" preload="none"><source src="audio/03-duschen-schampoo.wav" type="audio/wav"></audio>
     </div>
 
@@ -198,7 +198,7 @@ const theoryHTML = `
 
     <div class="lesson-audio">
       <button class="audio-btn" id="btn-audio-4" onclick="toggleAudio(event, 'audio-4')">▶</button>
-      <span class="audio-label">🎙️ Ascultă propozițiile despre Mundpflege + cremă (audio Hedda)</span>
+      <span class="lesson-audio-label">🎙️ Ascultă propozițiile despre Mundpflege + cremă (audio Hedda)</span>
       <audio id="audio-4" preload="none"><source src="audio/04-mundpflege-creme.wav" type="audio/wav"></audio>
     </div>
 
