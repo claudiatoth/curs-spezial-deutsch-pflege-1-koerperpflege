@@ -154,7 +154,7 @@ const ex4Data = [
 
 function buildEx4() {
     const c = document.getElementById('ex4-container'); if (!c) return;
-    let h = '<div class="exercise-instruction"><strong>🎩 Imperativ politicos cu Sie.</strong> Transformă forma cu „du" (informal) în forma politicoasă cu „Sie" (cu pacientul SIE întotdeauna). 💡 Pattern: <strong>Verb la infinitiv + Sie</strong>.</div>';
+    let h = '<div class="exercise-instruction"><strong>🎩 Imperativ politicos cu Sie.</strong> Transformă forma cu „du" (informal) în forma politicoasă cu „Sie" (cu pacientul SIE întotdeauna). 💡 Schemă: <strong>Verb la ÎNCEPUTUL propoziției + Sie</strong>.</div>';
     ex4Data.forEach((it, i) => {
         h += `<div class="exercise-item"><span class="exercise-number">${i + 1}</span><div class="input-group"><label>${it.sentence}</label><small class="translation-hint">💬 ${it.translation}</small><input type="text" id="ex4-${it.id}" placeholder="Scrie forma cu Sie..."></div><div class="feedback" id="ex4-f${it.id}"></div></div>`;
     });

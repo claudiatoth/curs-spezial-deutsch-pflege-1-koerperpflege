@@ -126,7 +126,7 @@ const theoryHTML = `
     </div>
 
     <div class="grammar-tip">
-      <h5>🧱 Atenție la pattern</h5>
+      <h5>🧱 Atenție la model</h5>
       <p><strong>Ich wasche Ihnen den Rücken.</strong> — Schema fixă în Pflege: <code>Ich + verb + IHNEN (Dativ persoană) + den/die/das + obiect spălat (Akkusativ)</code>.</p>
       <p>La fel: <em>Ich wasche Ihnen die Füße / die Haare / die Hände</em>. Persoana e ALTUL, obiectul e PARTEA corpului.</p>
     </div>
@@ -261,7 +261,7 @@ const theoryHTML = `
       <span class="lesson-audio-label">🔊 Ascultă secțiunea</span>
     </div>
 
-    <p class="theory-intro-para">Cuvintele de mai jos le folosești zi de zi cu pattern-ul <em>„Ich wasche Ihnen DEN/DIE/DAS ..."</em>. Atenție la articol — el îți spune ce vine după (den, die, das în Akkusativ).</p>
+    <p class="theory-intro-para">Cuvintele de mai jos le folosești zi de zi după schema <em>„Ich wasche Ihnen DEN/DIE/DAS ..."</em>. Atenție la articol — el îți spune ce vine după (den, die, das în Akkusativ).</p>
 
     <div class="korper-grid">
       <div class="korper-card masculin">
@@ -364,7 +364,7 @@ const theoryHTML = `
     <div class="grammar-summary">
       <table class="summary-table">
         <thead>
-          <tr><th>Regulă</th><th>Pattern</th><th>Exemplu din lecție</th></tr>
+          <tr><th>Regulă</th><th>Schemă</th><th>Exemplu din lecție</th></tr>
         </thead>
         <tbody>
           <tr>
@@ -374,7 +374,7 @@ const theoryHTML = `
           </tr>
           <tr>
             <td><strong>Imperativ politicos</strong></td>
-            <td>Verb la finalul propoziției + Sie</td>
+            <td><strong>Verb la ÎNCEPUTUL propoziției</strong> + Sie</td>
             <td><strong>Drehen Sie sich</strong> auf die Seite.</td>
           </tr>
           <tr>

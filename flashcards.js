@@ -57,14 +57,14 @@ const flashcardsData = [
     { de: "Brauchen Sie noch ein Kissen oder eine Decke?", ro: "❓ Mai aveți nevoie de o pernă sau o pătură?", audio: "audio/letters/kissen-decke.wav" },
 
     // === 6. PATTERN-uri multi-folos (8) ===
-    { de: "Ich helfe Ihnen bei ___", ro: "🔑 Pattern Pflege #1 · Ich helfe Ihnen BEI DER Körperpflege", audio: "audio/letters/helfe-bei.wav" },
-    { de: "Ich helfe Ihnen beim ___", ro: "🔑 Pattern Pflege #2 · Ich helfe Ihnen BEIM Waschen/Duschen/Anziehen", audio: "audio/letters/helfe-beim.wav" },
-    { de: "Ich wasche Ihnen den/die/das ___", ro: "🔑 Pattern Pflege #3 · IHNEN (Dat) + Akk · den Rücken / die Haare / das Bein", audio: "audio/letters/wasche-ihnen.wav" },
-    { de: "Ich trockne Ihnen ___ ab", ro: "🔑 Pattern Pflege #4 · TRENNBAR abtrocknen · die Haare AB / den Rücken AB", audio: "audio/letters/trockne-ab.wav" },
-    { de: "Soll ich Ihnen ___ eincremen?", ro: "🔑 Pattern Pflege #5 · ofertă politicoasă · die Beine / den Rücken EINCREMEN", audio: "audio/letters/soll-eincremen-pattern.wav" },
-    { de: "Ich werde Sie jetzt ___", ro: "🔑 Pattern Pflege #6 · FUTUR cu werden · abduschen / waschen / anziehen", audio: "audio/letters/werde-sie.wav" },
-    { de: "Ich bringe gleich ___ ins Zimmer", ro: "🔑 Pattern Pflege #7 · ANUNȚ acțiune · die Waschschüssel / das Handtuch", audio: "audio/letters/bringe-gleich.wav" },
-    { de: "Damit ich Ihnen ___ waschen kann", ro: "🔑 Pattern Pflege #8 · SCOP cu damit · den Rücken / die Füße WASCHEN KANN", audio: "audio/letters/damit-waschen.wav" }
+    { de: "Ich helfe Ihnen bei ___", ro: "🔑 Model Pflege #1 · Ich helfe Ihnen BEI DER Körperpflege", audio: "audio/letters/helfe-bei.wav" },
+    { de: "Ich helfe Ihnen beim ___", ro: "🔑 Model Pflege #2 · Ich helfe Ihnen BEIM Waschen/Duschen/Anziehen", audio: "audio/letters/helfe-beim.wav" },
+    { de: "Ich wasche Ihnen den/die/das ___", ro: "🔑 Model Pflege #3 · IHNEN (Dat) + Akk · den Rücken / die Haare / das Bein", audio: "audio/letters/wasche-ihnen.wav" },
+    { de: "Ich trockne Ihnen ___ ab", ro: "🔑 Model Pflege #4 · TRENNBAR abtrocknen · die Haare AB / den Rücken AB", audio: "audio/letters/trockne-ab.wav" },
+    { de: "Soll ich Ihnen ___ eincremen?", ro: "🔑 Model Pflege #5 · ofertă politicoasă · die Beine / den Rücken EINCREMEN", audio: "audio/letters/soll-eincremen-pattern.wav" },
+    { de: "Ich werde Sie jetzt ___", ro: "🔑 Model Pflege #6 · FUTUR cu werden · abduschen / waschen / anziehen", audio: "audio/letters/werde-sie.wav" },
+    { de: "Ich bringe gleich ___ ins Zimmer", ro: "🔑 Model Pflege #7 · ANUNȚ acțiune · die Waschschüssel / das Handtuch", audio: "audio/letters/bringe-gleich.wav" },
+    { de: "Damit ich Ihnen ___ waschen kann", ro: "🔑 Model Pflege #8 · SCOP cu damit · den Rücken / die Füße WASCHEN KANN", audio: "audio/letters/damit-waschen.wav" }
 ];
 
 // ============================================
@@ -78,7 +78,7 @@ function buildFlashcards() {
     if (!container) return;
     container.innerHTML = `
         <div class="flashcard-intro">
-            <p>🎯 <strong>48 flashcards în 6 categorii</strong> — Verbe · Părți corp · Obiecte · Imperativ · Întrebări · Pattern-uri.</p>
+            <p>🎯 <strong>48 flashcards în 6 categorii</strong> — Verbe · Părți corp · Obiecte · Imperativ · Întrebări · Modele.</p>
             <p>Apasă pe card pentru traducere · Apasă 🔊 pentru pronunție Hedda · Folosește săgețile pentru navigare.</p>
         </div>
         <div class="flashcard-wrapper">

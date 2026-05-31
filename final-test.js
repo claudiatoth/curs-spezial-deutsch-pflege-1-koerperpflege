@@ -5,7 +5,7 @@
 // 2. Verbe trennbare + modale (5)
 // 3. Sie formal + imperativ politicos (5)
 // 4. Traducere RO → DE (5)
-// 5. Recunoaștere structuri Pattern Pflege (5)
+// 5. Recunoaștere structuri Model Pflege (5)
 // Claudia Toth · Annettes Deutschkurs · A2.1
 // ============================================
 
@@ -48,12 +48,12 @@ const finalTestData = [
     { id: 19, category: 'Traducere', type: 'fill', question: '🇷🇴 „Apa este destul de caldă?" → 🇩🇪 ?', correct: 'Ist das Wasser warm genug?', accept: ['ist das wasser warm genug', 'ist das wasser warm genug?'] },
     { id: 20, category: 'Traducere', type: 'fill', question: '🇷🇴 „Vă ajut la duș." → 🇩🇪 ?', correct: 'Ich helfe Ihnen beim Duschen.', accept: ['ich helfe ihnen beim duschen', 'ich helfe ihnen beim duschen.'] },
 
-    // === 5. RECUNOAȘTERE PATTERN PFLEGE (5) ===
-    { id: 21, category: 'Pattern', type: 'mc', question: 'În fraza „Ich wasche IHNEN den Rücken" — ce CAZ e „Ihnen"?', options: ['Nominativ', 'Akkusativ', 'Dativ', 'Genitiv'], correctIndex: 2, correct: 'Dativ (Ihnen = persoană → vouă/dumneavoastră)' },
-    { id: 22, category: 'Pattern', type: 'mc', question: 'În fraza „Ich wasche Ihnen DEN Rücken" — ce CAZ e „den Rücken"?', options: ['Nominativ', 'Akkusativ', 'Dativ', 'Genitiv'], correctIndex: 1, correct: 'Akkusativ (obiect direct, masculin → den)' },
-    { id: 23, category: 'Pattern', type: 'mc', question: 'În fraza „Können Sie SICH selbst waschen?" — ce este „sich"?', options: ['articolul', 'pronume reflexiv', 'pronume posesiv', 'particulă'], correctIndex: 1, correct: 'pronume reflexiv (sich = se / pe sine)' },
-    { id: 24, category: 'Pattern', type: 'fill', question: 'Completează fraza pe pattern: „Ich helfe Ihnen ____ Körperpflege." (la igiena → bei + Dat)', correct: 'bei der', accept: ['bei der'] },
-    { id: 25, category: 'Pattern', type: 'mc', question: 'Care e diferența dintre „beim Waschen" și „bei der Körperpflege"?', options: ['beim = singur, bei der = plural', 'beim = bei+dem (n/m), bei der = feminin', 'sunt identice', 'beim e formal'], correctIndex: 1, correct: 'beim = bei+dem (substantiv masculin/neutru) · bei der = feminin (NU se contractă)' }
+    // === 5. RECUNOAȘTERE MODEL PFLEGE (5) ===
+    { id: 21, category: 'Model', type: 'mc', question: 'În fraza „Ich wasche IHNEN den Rücken" — ce CAZ e „Ihnen"?', options: ['Nominativ', 'Akkusativ', 'Dativ', 'Genitiv'], correctIndex: 2, correct: 'Dativ (Ihnen = persoană → vouă/dumneavoastră)' },
+    { id: 22, category: 'Model', type: 'mc', question: 'În fraza „Ich wasche Ihnen DEN Rücken" — ce CAZ e „den Rücken"?', options: ['Nominativ', 'Akkusativ', 'Dativ', 'Genitiv'], correctIndex: 1, correct: 'Akkusativ (obiect direct, masculin → den)' },
+    { id: 23, category: 'Model', type: 'mc', question: 'În fraza „Können Sie SICH selbst waschen?" — ce este „sich"?', options: ['articolul', 'pronume reflexiv', 'pronume posesiv', 'particulă'], correctIndex: 1, correct: 'pronume reflexiv (sich = se / pe sine)' },
+    { id: 24, category: 'Model', type: 'fill', question: 'Completează fraza după model: „Ich helfe Ihnen ____ Körperpflege." (la igiena → bei + Dat)', correct: 'bei der', accept: ['bei der'] },
+    { id: 25, category: 'Model', type: 'mc', question: 'Care e diferența dintre „beim Waschen" și „bei der Körperpflege"?', options: ['beim = singur, bei der = plural', 'beim = bei+dem (n/m), bei der = feminin', 'sunt identice', 'beim e formal'], correctIndex: 1, correct: 'beim = bei+dem (substantiv masculin/neutru) · bei der = feminin (NU se contractă)' }
 ];
 
 // ============================================
@@ -66,7 +66,7 @@ function buildFinalTest() {
     let html = `
         <div class="final-test-intro">
             <h4>🎯 Test Final — 25 întrebări</h4>
-            <p>5 categorii × 5 întrebări: <strong>Vocabular · Verbe · Sie formal · Traducere · Pattern</strong>. Termen estimat: 15-20 minute.</p>
+            <p>5 categorii × 5 întrebări: <strong>Vocabular · Verbe · Sie formal · Traducere · Model</strong>. Termen estimat: 15-20 minute.</p>
             <p>📝 Diacriticele DE și RO sunt opționale — totul se acceptă.</p>
         </div>
         <div id="ft-questions">

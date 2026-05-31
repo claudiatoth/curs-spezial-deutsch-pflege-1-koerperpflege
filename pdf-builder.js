@@ -162,7 +162,7 @@
     function buildFlashcards() {
         const count = (typeof flashcardsData !== 'undefined') ? flashcardsData.length : 0;
         let html = `<h1 class="chapter new-section">📇 4. Vocabular complet (Flashcards)</h1>
-            <p style="margin-bottom:10px">Cele <strong>${count} carduri</strong> ale lecției grupate pe categorii: Verbe · Părți corp · Obiecte · Imperativ · Întrebări · Pattern-uri.</p>
+            <p style="margin-bottom:10px">Cele <strong>${count} carduri</strong> ale lecției grupate pe categorii: Verbe · Părți corp · Obiecte · Imperativ · Întrebări · Modele.</p>
             <div class="flashcards-grid">`;
         if (typeof flashcardsData !== 'undefined') {
             flashcardsData.forEach(card => {
